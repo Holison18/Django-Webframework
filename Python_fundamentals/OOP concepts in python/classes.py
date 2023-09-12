@@ -12,14 +12,19 @@ class Dog:
     def __init__(self,name):
         self.name = name
 
+    # add a speak function
+    def speak(self):
+        print("My name is {}".format(self.name))
+
 # object instantiation
 hope = Dog("Hope")
 risky = Dog("Risky")
 
 # Assessing class attributes
-print("A Dog is a {}".format(hope.__class__.str1))
-print("A Dog is a {}".format(risky.__class__.str1))
+print("Hope is a {}".format(hope.__class__.str1))
+print("Risky is a {}".format(risky.__class__.str1))
+print()
 
-# Accessing instance attributes
-print("The name of my dog is {}".format(hope.name))
-print("The name of my dog is {}".format(risky.name))
+# Printing the name of the dog using the speak method
+hope.speak()
+risky.speak()
