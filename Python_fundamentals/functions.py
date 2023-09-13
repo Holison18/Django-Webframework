@@ -18,3 +18,19 @@ num2 = int(input("Num2: "))
 
 # call addNumber function with num1 and num2 as arguments
 print("Results = {}".format(addNumber(num1,num2)))
+
+
+# A function to determine if a number is a prime number
+def is_prime(n:int)->int:
+    if n in [2,3]:
+        return True
+    if (n == 1) or (n % 2 == 0):
+        return False
+    r = 3
+    while r * r <= n:
+        if n % r == 0:
+            return False
+        r+=2
+    return True
+print(is_prime(76))
+print(is_prime(19))
