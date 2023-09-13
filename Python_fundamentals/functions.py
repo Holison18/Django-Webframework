@@ -13,11 +13,8 @@ def addNumber(num1:int,num2:int)-> int:
     results = num1 + num2
     return results
 
-num1 = int(input("Num1: "))
-num2 = int(input("Num2: ")) 
-
 # call addNumber function with num1 and num2 as arguments
-print("Results = {}".format(addNumber(num1,num2)))
+print("Results = {}".format(addNumber(num1=12,num2=23)))
 
 
 # A function to determine if a number is a prime number
@@ -34,3 +31,13 @@ def is_prime(n:int)->int:
     return True
 print(is_prime(76))
 print(is_prime(19))
+
+# create a function to check whether the number passed as an argument is even or odd
+def evenOdd(x):
+    if x % 2 == 0:
+        print("Number is even")
+    else:
+        print("Number is odd")
+
+evenOdd(13)
+evenOdd(10)
