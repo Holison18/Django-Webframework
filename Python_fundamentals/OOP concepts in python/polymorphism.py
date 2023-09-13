@@ -19,3 +19,21 @@ class eagle(bird):
     
     def flight(self):
         print("Eagles can fly very high")
+
+
+# create instance of the class
+bird1 = bird()
+chicken1 = chicken()
+eagle1 = eagle
+
+# call birds intro and flight methods
+bird1.intro()
+bird1.flight()
+
+# call chicken's intro and flight methods
+chicken1.intro()
+chicken1.flight()
+
+# call eagle1's intro and flight methods
+eagle1.intro()
+eagle1.flight()
