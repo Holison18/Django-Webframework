@@ -51,4 +51,10 @@ def increment(number,by):
     return number + by
 
 print(increment(number=34,by=6))
- 
+
+# default arguments for functions
+# All option parameters should come after the required parameters
+def increment1(number:int,by=1)->int: # pass a default increment parameter to increment1
+    return number + by
+
+print(increment1(10))
