@@ -59,7 +59,7 @@ def increment1(number:int,by=1)->int: # pass a default increment parameter to in
 
 print(increment1(10))
 
-# *args are used to define functions with multiple arguments
+# *args are used to define functions with variable lenght arguments
 def multiply(*numbers:int)->int:
     total = 1
     for number in numbers:
@@ -67,3 +67,11 @@ def multiply(*numbers:int)->int:
     return total
 
 print(multiply(3,2,4,1,5))
+
+# **args
+def save_user(**user):
+    print(f"ID: {user['ID']}")
+    print(f"name: {user['name']}")
+    print(f"age: {user['age']}")
+
+save_user(ID = 1,name = "Kobina",age = 23)
