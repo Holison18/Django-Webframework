@@ -58,3 +58,12 @@ def increment1(number:int,by=1)->int: # pass a default increment parameter to in
     return number + by
 
 print(increment1(10))
+
+# *args are used to define functions with multiple arguments
+def multiply(*numbers:int)->int:
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+print(multiply(3,2,4,1,5))
