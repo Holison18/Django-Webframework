@@ -41,3 +41,14 @@ def evenOdd(x):
 
 evenOdd(13)
 evenOdd(10)
+
+# in programming there are two types of function
+# 1. Functions that perform a task and
+# 2. Functions that return a value
+
+# using Keyword argument
+def increment(number,by):
+    return number + by
+
+print(increment(number=34,by=6))
+ 
