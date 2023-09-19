@@ -24,7 +24,7 @@ print(squared)
 even = [even_number for even_number in range(11) if even_number%2==0]
 print(even)
 
-# creatig a matrix using a list comprehension
+# creating a matrix using a list comprehension
 matrix = [[array for array in range(4)] for array in range(3)]
 print(matrix)
 
