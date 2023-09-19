@@ -69,3 +69,11 @@ end = time.time()
 
 # display time take by for_loop()
 print(f"Time take by list comprehension {round(end-begin,2)}")
+
+# using list comprehension with if else
+lis = ["Even number" if i%2==0 else "Odd number" for i in range(10)]
+print(lis)
+
+lis = [num for num in range(100) if num % 5 == 0 and num % 10 == 0]
+print(lis)
+
