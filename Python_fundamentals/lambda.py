@@ -9,3 +9,8 @@ print(x(10))
 # lambda function with more than one arguments
 m = lambda a,b: a*b
 print(m(2,4))
+
+# conditional checking using lambda function
+format_numeric = lambda num: f"{num:e}" if isinstance(num,int) else f"{num:,.2f}"
+print("Int formatting: ",format_numeric(100000))
+print("Float formatting: ",format_numeric(999999.745334324))
