@@ -1,4 +1,5 @@
-# list comprehendsion
+import time
+# list comprehension
 # normal list
 myList = [1,2,3,4,5]
 
@@ -13,7 +14,7 @@ newList = [(x+1) for x in myList]
 # print newlist
 print(newList)
 
-# Example 2, using list comprehendsion to find the square of element is a list
+# Example 2, using list comprehension to find the square of element is a list
 myList2 = [3,2,4,5,1]
 
 squared = [x**2 for x in myList2]
@@ -35,6 +36,36 @@ for character in 'Kofi':
 print(myList3)
 
 
-# using list comprehendsion
+# using list comprehension
 myList3 = [character for character in "Kofi"]
 print(myList3)
+
+
+# time analyses of a for loop and a list comprehension
+# for loop imprementation
+def for_loop(n):
+    result = []
+    for i in range(n):
+        result.append(i)
+    return result
+
+# list comprehension implementation
+def list_comprehension(n):
+    result = [i for i in range(n)]
+    return result
+
+# calculate the time for for_loop()
+begin = time.time()
+for_loop(10**6)
+end = time.time()
+
+# display time take by for_loop()
+print(f"Time take by for loop {round(end-begin,2)}")
+
+# calculate the time for list_comprehension()
+begin = time.time()
+list_comprehension(10**6)
+end = time.time()
+
+# display time take by for_loop()
+print(f"Time take by list comprehension {round(end-begin,2)}")
