@@ -22,3 +22,19 @@ print(squared)
 # creating a list of even numbers
 even = [even_number for even_number in range(11) if even_number%2==0]
 print(even)
+
+# creatig a matrix using a list comprehension
+matrix = [[array for array in range(4)] for array in range(3)]
+print(matrix)
+
+# appending character to a list
+# using the traditional for loop expression
+myList3 = []
+for character in 'Kofi':
+    myList3.append(character)
+print(myList3)
+
+
+# using list comprehendsion
+myList3 = [character for character in "Kofi"]
+print(myList3)
