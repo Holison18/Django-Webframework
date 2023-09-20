@@ -30,3 +30,11 @@ def abys(a,b):
 
 abys(2.0,3.0)
 abys(3.0,3.0)
+
+# raising an exception
+name = input("Enter your name: ")
+age = int(input("Enter your age: " ))
+if age < 1:
+    raise "Whow you can't be a human being"
+else:
+    print(f"Hello {name}, you'll be {age+1} next years hurray!")
