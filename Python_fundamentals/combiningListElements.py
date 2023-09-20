@@ -24,3 +24,11 @@ common = ["True" if i==j else "False" for i,j in zip(list1,list2)]
 
 # print common
 print(common)
+
+# using map, lambda and zip method
+# using the marks and bonuses example
+marks = [67,89,80,77,65,75]
+bonus = [10,7,5,2,20,10]
+totalMarks2 = list(map(lambda x, y: x + y, zip(marks, bonus)))
+for total in totalMarks2:
+    print(total)
