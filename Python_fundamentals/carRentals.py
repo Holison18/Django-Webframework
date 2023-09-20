@@ -15,6 +15,7 @@ class carRentals:
         print(f"Car Make: {self.Make}")
         print(f"Car Price: {self.Price}")
         print(f"Car Rentee: {rentee}")
+        print(f"Date: {date}")
 
 
 # create an instance of car rentals
