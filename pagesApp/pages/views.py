@@ -10,4 +10,4 @@ class About(TemplateView):
     template_name = "about.html"
 
 class Contact(TemplateView):
-    template_name = "contactUs.html"
+    template_name = "contact.html"
