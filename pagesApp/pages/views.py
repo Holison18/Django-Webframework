@@ -8,8 +8,3 @@ class homePageView(TemplateView):
 # create a template view for the about page
 class aboutPageView(TemplateView):
     template_name = "about.html"
-
-
-# create a template view for the contact page
-class contactPageView(TemplateView):
-    template_name = 'contact.html'
