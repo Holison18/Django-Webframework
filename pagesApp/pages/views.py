@@ -1,13 +1,6 @@
-from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
 
+# create a template view for the homepage
 
-# Create your views here.
-class HomePageView(TemplateView):
-    template_name = "home.html"
-
-
-class About(TemplateView):
-    template_name = "about.html"
-
-class Contact(TemplateView):
-    template_name = "contact.html"
+class homePageView(TemplateView):
+    template_name = 'home.html'
