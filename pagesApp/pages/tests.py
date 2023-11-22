@@ -2,47 +2,46 @@ from django.test import SimpleTestCase
 from django.urls import reverse
 
 
-# create a class for HomePage tests
+# test for homepage
 class homePageTests(SimpleTestCase):
-    # url successful test
-    def test_url_exists_at_correct_location(self):
+    # url test
+    def urls_successful_test(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
-    # url name test
-    def test_url_available_by_name(self):
+    # url name available test
+    def test_url_name_available(self):
         response = self.client.get(reverse("home"))
         self.assertEqual(response.status_code, 200)
 
-    # check if the html template name is correct
-    def test_template_name_correct(self):
+    # check html template
+    def test_template_name_available(self):
         response = self.client.get(reverse("home"))
         self.assertTemplateUsed(response, "home.html")
 
-    # check template content is correct
+    # check template content
     def test_template_content(self):
-        response = self.client.get(reverse("home"))
+        response = self.client.get("home")
         self.assertContains(response, "<h1>Home Page</h1>")
 
+    # about page test
+    class aboutPageTests(SimpleTestCase):
+        # url test
+        def urls_successful_test(self):
+            response = self.client.get("/about/")
+            self.assertEqual(response.status_code, 200)
 
-# create a class for About Page tests
-class aboutPageTests(SimpleTestCase):
-    # url successful test
-    def test_url_exists_at_correct_location(self):
-        response = self.client.get("/about/")
-        self.assertEqual(response.status_code, 200)
+        # url name available test
+        def test_url_name_available(self):
+            response = self.client.get(reverse("about"))
+            self.assertEqual(response.status_code, 200)
 
-    # url name test
-    def test_url_available_by_name(self):
-        response = self.client.get(reverse("about"))
-        self.assertEqual(response.status_code, 200)
+        # check html template
+        def test_template_name_available(self):
+            response = self.client.get(reverse("about"))
+            self.assertTemplateUsed(response, "about.html")
 
-    # check if the html template name is correct
-    def test_template_name_correct(self):
-        response = self.client.get(reverse("about"))
-        self.assertTemplateUsed(response, "about.html")
-
-    # check template content is correct
-    def test_template_content(self):
-        response = self.client.get(reverse("about"))
-        self.assertContains(response, "<h1>About Page</h1>")
+        # check template content
+        def test_template_content(self):
+            response = self.client.get("about")
+            self.assertContains(response, "<h1>About Page</h1>")
