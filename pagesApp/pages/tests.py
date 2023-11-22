@@ -5,7 +5,7 @@ from django.urls import reverse
 # test for homepage
 class homePageTests(SimpleTestCase):
     # url test
-    def urls_successful_test(self):
+    def test_urls_successful_test(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
@@ -21,13 +21,13 @@ class homePageTests(SimpleTestCase):
 
     # check template content
     def test_template_content(self):
-        response = self.client.get("home")
+        response = self.client.get(reverse("home"))
         self.assertContains(response, "<h1>Home Page</h1>")
 
     # about page test
 class aboutPageTests(SimpleTestCase):
     # url test
-    def urls_successful_test(self):
+    def test_urls_successful_test(self):
         response = self.client.get("/about/")
         self.assertEqual(response.status_code, 200)
 
@@ -43,5 +43,5 @@ class aboutPageTests(SimpleTestCase):
 
     # check template content
     def test_template_content(self):
-        response = self.client.get("about")
+        response = self.client.get(reverse("about"))
         self.assertContains(response, "<h1>About Page</h1>")
