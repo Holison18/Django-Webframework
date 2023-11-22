@@ -22,7 +22,7 @@ class homePageTests(SimpleTestCase):
     # check template content is correct
     def test_template_content(self):
         response = self.client.get(reverse("home"))
-        self.assertContains(response,"<h1>Home Page</h1>")
+        self.assertContains(response, "<h1>Home Page</h1>")
 
 
 # create a class for About Page tests
@@ -45,4 +45,4 @@ class aboutPageTests(SimpleTestCase):
     # check template content is correct
     def test_template_content(self):
         response = self.client.get(reverse("about"))
-        self.assertContains(response,"<h1>About Page</h1>")
+        self.assertContains(response, "<h1>About Page</h1>")
