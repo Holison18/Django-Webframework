@@ -32,3 +32,8 @@ class aboutPageTests(SimpleTestCase):
     def test_url_available_by_name(self):
         response = self.client.get(reverse("about"))
         self.assertEqual(response.status_code, 200)
+
+    # test template name available
+    def test_template_name_available(self):
+        response = self.client.get(reverse("home"))
+        self.assertTemplateUsed(response, "about.html")
