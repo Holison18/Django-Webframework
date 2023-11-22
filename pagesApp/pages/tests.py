@@ -21,6 +21,11 @@ class homePageTests(SimpleTestCase):
         response = self.client.get(reverse("home"))
         self.assertTemplateUsed(response, "home.html")
 
+    # test if content is <h1> Home Page </h1?
+    def test_template_content(self):
+        response = self.client.get(reverse("home"))
+        self.assertContains(response, "<h1>Home Page</h1>")
+
 
 # create a test for the about page
 class aboutPageTests(SimpleTestCase):
@@ -35,5 +40,10 @@ class aboutPageTests(SimpleTestCase):
 
     # test template name available
     def test_template_name_available(self):
-        response = self.client.get(reverse("home"))
+        response = self.client.get(reverse("about"))
         self.assertTemplateUsed(response, "about.html")
+
+    # test if content is <h1> Home Page </h1?
+    def test_template_content(self):
+        response = self.client.get(reverse("about"))
+        self.assertContains(response, "<h1>About Page</h1>")
