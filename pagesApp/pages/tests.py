@@ -16,6 +16,11 @@ class homePageTests(SimpleTestCase):
         response = self.client.get(reverse("home"))
         self.assertEqual(response.status_code, 200)
 
+    # test template name
+    def test_template_name_available(self):
+        response = self.client.get(reverse("home"))
+        self.assertTemplateUsed(response, "home.html")
+
 
 # create a test for the about page
 class aboutPageTests(SimpleTestCase):
