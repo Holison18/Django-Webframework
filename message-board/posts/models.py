@@ -4,5 +4,5 @@ from django.db import models
 
 
 # Add a model to accept text
-class posts(models.Model):
+class post(models.Model):
     text = models.TextField()
