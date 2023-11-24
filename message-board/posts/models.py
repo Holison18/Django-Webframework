@@ -6,3 +6,6 @@ from django.db import models
 # Add a model to accept text
 class Post(models.Model):
     text = models.TextField()
+
+    def __str__(self) -> str:
+        return self.text[:50]
