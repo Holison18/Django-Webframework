@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-
-# Add a model to accept text
 class Post(models.Model):
+    # create a text field
     text = models.TextField()
 
+    # add __str__
     def __str__(self) -> str:
         return self.text[:50]
