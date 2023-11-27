@@ -20,17 +20,10 @@ class PostTests(TestCase):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
-    # test if url name is available
-    def test_url_name_available(self):
+    # home page unit tests
+    def test_homepage(self):
         response = self.client.get(reverse("home"))
         self.assertEqual(response.status_code, 200)
-
-    # test if the template is available
-    def text_template_available(self):
-        response = self.client.get(reverse("home"))
         self.assertTemplateUsed(response, "home.html")
-
-    # test if the template is available
-    def text_template_available(self):
-        response = self.client.get(reverse("home"))
-        self.assertTemplateUsed(response, "home.html")
+        self.assertContains(response, "<h1>Message Board Home Page</h1>")
+        
