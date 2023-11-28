@@ -1,15 +1,10 @@
-<!-- templates/base.html -->
-<html>
-    <head>
-        <title>Django blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="{% url 'home' %}">Django blog</a></h1>
-        </header>
-        <div>
-            {% block content %}
-            {% endblock content %}
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% block content %}
+    {% for post in post_list %}
+        <div class="post-entry">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
         </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock content %}
