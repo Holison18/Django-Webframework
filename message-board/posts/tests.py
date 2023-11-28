@@ -7,7 +7,7 @@ class PostTtests(TestCase):
 
     # create a temporary data base using setUpTestData function
     @classmethod
-    def setUpTestData(cls) -> None:
+    def setUpTestData(cls):
         cls.post = Post.objects.create(text = "Testing Text")
 
     # test if database works correctly
