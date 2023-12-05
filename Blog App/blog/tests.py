@@ -26,5 +26,8 @@ class BlogTest(TestCase):
         self.assertEqual(response.status_code,200)
 
     def test_blog_app(self):
-        
+        response1 = self.client.get(reverse("home"))
+        self.assertEqual(response1.status_code,200)
+        self.assertTemplateUsed(response1,"home.html")
+
 
