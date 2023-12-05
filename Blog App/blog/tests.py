@@ -21,13 +21,26 @@ class BlogTest(TestCase):
         self.assertEqual(str(self.post),"Title")
         self.assertEqual(self.post.get_absolute_url(),"/post/1/")
 
-    def test_if_url_location_exists(self):
+    def test_if_url_location_exists_listview(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code,200)
 
-    def test_blog_app(self):
+    def test_if_url_location_exists_detailview(self):
+        response = self.client.get("/post/1/")
+        self.assertEqual(response.status_code,200)
+
+    def test_listview(self):
         response1 = self.client.get(reverse("home"))
         self.assertEqual(response1.status_code,200)
         self.assertTemplateUsed(response1,"home.html")
+        self.assertContains(response1,"Body")
+
+    def test_detailview(self):
+        response = self.client.get(reverse("post_detail", kwargs={"pk":self.post.pk}))
+        no_response = self.client.get("/post/100000/")
+        self.assertEqual(response.status_code,200)
+        self.assertEqual(no_response.status_code,404)
+        self.assertTemplateUsed(response,"post_detail.html")
+        self.assertContains(response,"Title")
 
 
