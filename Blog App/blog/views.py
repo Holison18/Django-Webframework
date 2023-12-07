@@ -23,3 +23,5 @@ class UpdateBlogView(UpdateView):
     model = Post
     template_name = "post_edit.html"
     fields = ["title","body"]
+
+# creat a view to delete blog post
