@@ -21,5 +21,5 @@ class CreateBlogView(CreateView):
 # create a view to update blog post
 class UpdateBlogView(UpdateView):
     model = Post
-    template_name = "post_update.html"
+    template_name = "post_edit.html"
     fields = ["title","author","body"]
