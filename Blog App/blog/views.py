@@ -1,5 +1,5 @@
 from django.views.generic import ListView,DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView,UpdateView
 from .models import Post
 
 # create a view for the home page
@@ -16,4 +16,10 @@ class BlogDetailView(DetailView):
 class CreateBlogView(CreateView):
     model = Post
     template_name = "post_new.html"
+    fields = ["title","author","body"]
+
+# create a view to update blog post
+class UpdateBlogView(UpdateView):
+    model = Post
+    template_name = "post_update.html"
     fields = ["title","author","body"]
