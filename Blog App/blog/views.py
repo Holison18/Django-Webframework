@@ -1,5 +1,5 @@
 from django.views.generic import ListView,DetailView
-from django.views.generic.edit import CreateView,UpdateView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Post
 
 # create a view for the home page
@@ -25,3 +25,6 @@ class UpdateBlogView(UpdateView):
     fields = ["title","body"]
 
 # creat a view to delete blog post
+class DeleteBlogView(DeleteView):
+    model = Post
+    template_name = "post_delete.html"
