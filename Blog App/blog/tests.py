@@ -60,7 +60,7 @@ class BlogTest(TestCase):
             {"title": "Updated title", "body": "Updated Body"},
         )
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Post.objects.last().title, "Updated title")
         self.assertEqual(Post.objects.last().body, "Updated Body")
 
