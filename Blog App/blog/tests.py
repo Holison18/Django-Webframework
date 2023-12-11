@@ -44,7 +44,7 @@ class BlogTest(TestCase):
         self.assertContains(response, "Title")
 
     def test_createView(self):
-        response = self.client.get(
+        response = self.client.post(
             reverse(
                 "post_new",
             ),
@@ -55,7 +55,7 @@ class BlogTest(TestCase):
         self.assertEqual(Post.objects.last().body, "body")
 
     def test_post_updateView(self):
-        response = self.client.get(
+        response = self.client.post(
             reverse("post_edit", args="1"),
             {"title": "Updated title", "body": "Updated Body"},
         )
@@ -65,5 +65,5 @@ class BlogTest(TestCase):
         self.assertEqual(Post.objects.last().body, "Updated Body")
 
     def test_deleteView(self):
-        response = self.client.get(reverse("post_delete", args="1"))
+        response = self.client.post(reverse("post_delete", args="1"))
         self.assertEqual(response.status_code, 302)
