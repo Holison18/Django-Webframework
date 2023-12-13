@@ -4,4 +4,4 @@ from django.db import models
 
 # create custome user model
 class CustomUser(AbstractUser):
-    pass
+    age = models.PositiveIntegerField(null=True, blank=True)
