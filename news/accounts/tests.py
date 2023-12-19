@@ -16,5 +16,15 @@ class SignupPageTests(TestCase):
 
     def test_signup_form(self):
         response = self.client.post(
-            
+            reverse("signup"),
+            {
+                "username": "testusername"
+                "email": "test@email.com"
+                "password1": "mytest123"
+                "password2": "mytest123"
+            }
         )
+        self.assertEqual(response.status_code,302)
+        self.assertEqual(get_user_model().objects.all().count(),1)
+        self.assertEqual(get_user_model().objects.all()[0].username,"testusername")
+        self.assertEqual(get_user_model().objects.all()[0].email,"test@email.com")
