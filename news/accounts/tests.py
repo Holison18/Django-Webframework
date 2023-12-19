@@ -18,10 +18,10 @@ class SignupPageTests(TestCase):
         response = self.client.post(
             reverse("signup"),
             {
-                "username": "testusername"
-                "email": "test@email.com"
-                "password1": "mytest123"
-                "password2": "mytest123"
+                "username": "testusername",
+                "email": "test@email.com",
+                "password1": "mytest123",
+                "password2": "mytest123",
             }
         )
         self.assertEqual(response.status_code,302)
