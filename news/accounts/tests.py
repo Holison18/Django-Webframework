@@ -12,7 +12,7 @@ class SignupPageTests(TestCase):
     def test_view_name_exits(self):
         response = self.client.get(reverse("signup"))
         self.assertEqual(response.status_code,200)
-        self.assertTemplateUsed(response,"signup.html")
+        self.assertTemplateUsed(response,"registration/signup.html")
 
     def test_signup_form(self):
         response = self.client.post(
