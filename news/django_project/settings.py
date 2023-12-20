@@ -25,6 +25,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third party
+    "crispy-forms",
+    "crispy-bootstraps5",
+    # local apps
     "accounts.apps.AccountsConfig",  # new accounts app
     "pages.apps.PagesConfig", # new pages app
 ]
