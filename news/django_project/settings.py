@@ -123,3 +123,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 # login and logout redirect urls
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# crispy forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstraps5"
+CRISPY_TEMPLATE_PACK = "bootstraps5"
