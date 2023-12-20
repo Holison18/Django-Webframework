@@ -26,8 +26,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Third party
-    "crispy-forms",
-    "crispy-bootstraps5",
+    "crispy_forms",
+    "crispy_bootstrap5",
     # local apps
     "accounts.apps.AccountsConfig",  # new accounts app
     "pages.apps.PagesConfig", # new pages app
@@ -125,5 +125,5 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
 # crispy forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstraps5"
-CRISPY_TEMPLATE_PACK = "bootstraps5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
