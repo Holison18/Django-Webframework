@@ -127,6 +127,17 @@ LOGOUT_REDIRECT_URL = "home"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+# zoho password
+zoho_password = environ.get("ZOHO_MAIL_PASSWORD1")
+
 # email backend
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
+EMAIL_HOST = "smtp.zoho.com"
+EMAIL_PORT = 587 # zoho smtp port (587 for TLS)
+EMAIL_HOST_USER = "kobinaakofiholison@zohomail.com"
+EMAIL_HOST_PASSWORD = "Algorithms@Zoho123"
+DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
+
 
