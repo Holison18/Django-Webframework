@@ -8,3 +8,9 @@ class Article(models.Model):
     body = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse("article_detail",kwargs=["pk":self.pk])
