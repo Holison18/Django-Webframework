@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     # local apps
     "accounts.apps.AccountsConfig",  # new accounts app
     "pages.apps.PagesConfig", # new pages app
-    "articles.app.ArticlesConfig", # articles app
+    "articles.apps.ArticleConfig", # articles app
 ]
 
 MIDDLEWARE = [
