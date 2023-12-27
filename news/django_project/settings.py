@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # local apps
     "accounts.apps.AccountsConfig",  # new accounts app
     "pages.apps.PagesConfig", # new pages app
+    "articles.app.ArticlesConfig", # articles app
 ]
 
 MIDDLEWARE = [
@@ -99,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Africa/Accra"
 
 USE_I18N = True
 
