@@ -23,7 +23,7 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     fields = ["title", "body"]
 
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
     template_name = "article_delete.html"
     success_url = reverse_lazy("article_list")
