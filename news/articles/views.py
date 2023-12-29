@@ -30,4 +30,4 @@ class ArticleDeleteView(DeleteView):
 class ArticleCreateView(CreateView):
     model = Article
     template_name = "article_create.html"
-    fields = ["title", "body", "author"]
+    fields = ["title", "body"]
