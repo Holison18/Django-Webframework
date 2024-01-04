@@ -3,6 +3,7 @@ from .models import Article,Comment
 
 class CommentInline(admin.StackedInline):
     model = Comment
+    extra = 0
 
 class ArticleAdmin(admin.ModelAdmin):
     inlines = [
