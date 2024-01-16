@@ -1,3 +1,4 @@
+from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
@@ -13,7 +14,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
 
 
 # create a class for detailView
-class ArticleDetailView(LoginRequiredMixin, DetailView):
+class ContentGet(LoginRequiredMixin, DetailView):
     model = Article
     template_name = "article_detail.html"
 
@@ -21,6 +22,12 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
         context =  super().get_context_data(**kwargs)
         context["form"] = CommentForm()
         return context
+    
+class ContentPost():
+    pass
+
+class ArticleDetailView(LoginRequiredMixin,View):
+    
 
 
 class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
