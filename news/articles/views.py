@@ -1,7 +1,7 @@
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.detail import SingleObjectMixin
-from django.views.generic import ListView, DetailView,FormView
+from django.views.generic import ListView, DetailView, FormView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .forms import CommentForm
 
@@ -20,22 +20,29 @@ class CommentGet(LoginRequiredMixin, DetailView):
     template_name = "article_detail.html"
 
     def get_context_data(self, **kwargs):
-        context =  super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["form"] = CommentForm()
         return context
-    
-class CommentPost():
-    pass
 
-class ArticleDetailView(LoginRequiredMixin,View):
 
-    def get(self, request,*args,**kwargs):
+class CommentPost(SingleObjectMixin, FormView):
+    model = Article
+    form_class = CommentForm
+    template_name = "article_details.html"
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+
+
+class ArticleDetailView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
         view = CommentGet.as_view()
-        return view(request,*args,**kwargs)
-    
-    def post(self, request,*args,**kwargs):
+        return view(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
         view = CommentGet.as_view()
-        return view(request,*args,**kwargs)
+        return view(request, *args, **kwargs)
 
 
 class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
