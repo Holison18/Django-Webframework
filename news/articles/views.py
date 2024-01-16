@@ -34,6 +34,16 @@ class CommentPost(SingleObjectMixin, FormView):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
 
+    def form_valid(self, form):
+        comment = form.save(commit = False)
+        comment.article = self.object
+        comment.save()
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        article = self.get_object()
+        return reverse("article_detail", kwargs={"pk": article.pk})
+
 
 class ArticleDetailView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
