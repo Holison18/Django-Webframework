@@ -14,7 +14,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
 
 
 # create a class for detailView
-class ContentGet(LoginRequiredMixin, DetailView):
+class CommentGet(LoginRequiredMixin, DetailView):
     model = Article
     template_name = "article_detail.html"
 
@@ -23,11 +23,18 @@ class ContentGet(LoginRequiredMixin, DetailView):
         context["form"] = CommentForm()
         return context
     
-class ContentPost():
+class CommentPost():
     pass
 
 class ArticleDetailView(LoginRequiredMixin,View):
+
+    def get(self, request,*args,**kwargs):
+        view = CommentGet.as_view()
+        return view(request,*args,**kwargs)
     
+    def post(self, request,*args,**kwargs):
+        view = CommentGet.as_view()
+        return view(request,*args,**kwargs)
 
 
 class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
