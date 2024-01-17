@@ -3,7 +3,7 @@ from environs import Env
 
 # create an instance of the Env class
 env = Env()
-env.read_env() # read env file
+env.read_env()  # read env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,12 +13,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^w89@)2=0t1o5rs30=fdd)3h0%mcb1_^3l_ghz%(^bmz7vl5xl"
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app ", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     # local apps
     "accounts.apps.AccountsConfig",  # new accounts app
-    "pages.apps.PagesConfig", # new pages app
-    "articles.apps.ArticleConfig", # articles app
+    "pages.apps.PagesConfig",  # new pages app
+    "articles.apps.ArticleConfig",  # articles app
 ]
 
 MIDDLEWARE = [
@@ -139,9 +139,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
 EMAIL_HOST = "smtp.zoho.com"
-EMAIL_PORT = 587 # zoho smtp port (587 for TLS)
+EMAIL_PORT = 587  # zoho smtp port (587 for TLS)
 EMAIL_HOST_USER = "kobinaakofiholison@zohomail.com"
 EMAIL_HOST_PASSWORD = "Algorithms@Zoho123"
 DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
-
-
