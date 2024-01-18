@@ -143,5 +143,5 @@ DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
 EMAIL_HOST = "smtp.zoho.com"
 EMAIL_PORT = 587  # zoho smtp port (587 for TLS)
 EMAIL_HOST_USER = "kobinaakofiholison@zohomail.com"
-EMAIL_HOST_PASSWORD = "Algorithms@Zoho123"
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = "kobinaakofiholison@zohomail.com"
