@@ -20,9 +20,9 @@ DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = [
     ".vercel.app ",
+    "newsapp-9f67xtj17-algorithms-projects.vercel.app",
     "localhost",
     "127.0.0.1",
-    "newsapp-hkvgda1qi-algorithms-projects.vercel.app",
 ]
 
 
