@@ -16,6 +16,14 @@ class Dog:
     def speak(self):
         print("My name is {}".format(self.name))
 
+
+class Cat(object):
+    # attributes
+    str1 = "Mammal"
+
+    def __init__(self,name:str) -> None:
+        self.name = name
+
 # object instantiation
 hope = Dog("Hope")
 risky = Dog("Risky")
